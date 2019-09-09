@@ -1,6 +1,6 @@
 <template>
   <div class="helper">
-    <span class="left">{{unFinishedTodoLength}} items left</span>
+    <span class="left">{{unfinished}} {{word}} left</span>
     <span class="tabs">
       <span
         v-for="state in states"
@@ -29,12 +29,16 @@ export default {
   },
   data() {
     return {
-      states: ['all', 'active', 'completed']
+      states: ['All', 'Active', 'Completed']
     }
   },
   computed: {
-    unFinishedTodoLength() {
-      return this.todos.filter(todo => !todo.completed).length
+    unfinished() {
+      return this.todos.filter(todo => !todo.completed).length;
+    },
+    word() {
+      console.log(typeof(this.unfinished));
+      return this.unfinished < 2 ? 'item' : 'items';
     }
   },
   methods: {
