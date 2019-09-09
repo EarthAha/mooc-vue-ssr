@@ -1,8 +1,6 @@
 <template>
   <header class="main-header">
     <h1>QTodo</h1>
-    <h2>Branch TestTTTT</h2>
-    <H3>testtesttesttest</H3>
   </header>
 </template>
 
